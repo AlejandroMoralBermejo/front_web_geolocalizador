@@ -12,29 +12,19 @@ function Login() {
 
   //   localStorage.clear();
 
-  //   useEffect(() => {
-  //     // Si el usuario ya está autenticado, redirige a "/"
-  //     if (localStorage.getItem("isAuthenticated") === "true") {
-  //       navigate("/");
-  //     } else {
-  //       navigate("/Inicio_sesion");
-  //     }
-  //   }, [navigate]);
-
   const handleLogin = () => {
     const validUser = users.find(
-      (user) => user.username == username && user.password == password
+      (user) => user.username === username && user.password === password
     );
 
     if (validUser) {
       alert("Login exitoso");
-      localStorage.setItem("isAuthenticated", "true");
-      //   setError("Exitoso");
-      navigate("/");
+      localStorage.setItem("isAuthenticated", "true"); // Corregido aquí
+      navigate("/"); // Redirige al usuario a la página principal
     } else {
       alert("Username o password incorrectos");
       setError("Ha salido mal");
-      localStorage.clear();
+      localStorage.clear(); // Limpia localStorage en caso de error
     }
   };
 
@@ -76,7 +66,7 @@ function Login() {
         {/* Botón de inicio de sesión */}
         <button
           onClick={handleLogin}
-          className="w-full text-black mt-4 py-2 bg-[#e6ff2b] hover:bg-[#a3af4a] hover:scale-105 transition-all duration-500 text-white font-semibold rounded-md"
+          className="w-full mt-4 py-2 bg-[#e6ff2b] hover:bg-[#a3af4a] hover:scale-105 transition-all duration-500 text-black font-semibold rounded-md"
         >
           LOGIN
         </button>

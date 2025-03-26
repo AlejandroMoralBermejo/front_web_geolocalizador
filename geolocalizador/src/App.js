@@ -15,7 +15,8 @@ function PrivateRoute({ children }) {
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
   const location = useLocation();
 
-  // Si el usuario no está autenticado, lo redirige a "/Inicio_sesion"
+  console.log("isAuthenticated:", isAuthenticated); // Verifica que el valor es el esperado
+
   if (!isAuthenticated) {
     return <Navigate to="/Inicio_sesion" state={{ from: location }} replace />;
   }
