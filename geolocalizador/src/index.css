@@ -4,10 +4,6 @@
 
 /* App.css */
 body {
-  background: linear-gradient(
-    to bottom,
-    #2c3e50,
-    #1e3a5f
-  ); /* Azul más claro a azul suave de arriba hacia abajo */
-  min-height: 100vh; /* Asegura que el fondo cubra toda la altura de la pantalla */
+  background: linear-gradient(to bottom, #2c3e50, #1e3a5f);
+  min-height: 100vh;
 }
