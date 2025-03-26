@@ -2,7 +2,7 @@ import React from "react";
 
 const WelcomePage = () => {
   return (
-    <div className="mt-40 flex flex-col justify-center items-center flex-1 text-center px-4">
+    <div className="mt-40  gap-3 flex flex-col justify-center items-center flex-1 text-center px-4">
       <h1 className="max-w-lg mx-auto font-bold text-4xl md:text-6xl xl:text-6xl text-white mb-4">
         <span className="important-text text-white">Bienvenid@ a</span>
         <br />
