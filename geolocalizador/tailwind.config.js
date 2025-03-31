@@ -1,21 +1,39 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-out both',
-        'spin-slow': 'spin 3s linear infinite',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: 0, transform: 'translateY(10px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+      colors: {
+        base: {
+          light: "#F0EAD6",       // beige claro
+          dark: "#2F3E2E",        // verde bosque profundo
+        },
+        accent: {
+          primary: "#A9D18E",     // verde oliva suave
+          hover: "#769E60",       // hover verde más fuerte
+        },
+        alert: {
+          success: "#DFF2BF",
+          error: "#FFD2D2",
+          warning: "#FEEFB3",
+          info: "#BDE5F8",
+        },
+        borderAlert: {
+          success: "#A9D18E",
+          error: "#D8000C",
+          warning: "#9F6000",
+          info: "#00529B",
+        },
+        textAlert: {
+          success: "#4F704F",
+          error: "#D8000C",
+          warning: "#9F6000",
+          info: "#00529B",
         },
       },
     },
   },
   plugins: [],
-}
+};

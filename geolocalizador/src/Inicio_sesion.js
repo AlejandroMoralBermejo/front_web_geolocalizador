@@ -4,8 +4,11 @@ import "./index.css";
 
 function Inicio_sesion() {
   return (
-    <div className="bg-gradient-to-b from-[#2c3e50] to-[#1e3a5f] min-h-screen">
-      <Login />
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#C9D6BD] to-[#597D60]">
+      <div className="relative group transition-all duration-500">
+        <div className="absolute inset-0 w-[500px] h-[500px] rounded-full bg-[#A9D18E] blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500 scale-110 -z-10" />
+        <Login />
+      </div>
     </div>
   );
 }

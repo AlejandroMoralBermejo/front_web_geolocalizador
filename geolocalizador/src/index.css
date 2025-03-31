@@ -2,11 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* App.css */
+/* Fondo con la nueva paleta */
 body {
-  background: linear-gradient(to bottom, #2c3e50, #1e3a5f);
+  background: linear-gradient(to bottom, #C9D6BD, #597D60);
   min-height: 100vh;
 }
+
+/* Transiciones suaves para todos los elementos */
 * {
   transition: all 0.3s ease-in-out;
+}
+
+/* Animación de aparición suave hacia arriba */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
 }

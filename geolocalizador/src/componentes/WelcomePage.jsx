@@ -2,15 +2,18 @@ import React from "react";
 
 const WelcomePage = () => {
   return (
-    <div className="mt-32 sm:mt-40 gap-6 flex flex-col justify-center items-center flex-1 text-center px-4 animate-fade-in">
-      <h1 className="max-w-xl mx-auto font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-white mb-6 text-balance leading-tight">
-        <span className="text-white block">Bienvenid@ a</span>
-        <span className="text-[#e6ff2b] block">geolocalizer</span>
+    <div className="mt-40 gap-3 flex flex-col justify-center items-center flex-1 text-center px-4">
+      <h1 className="max-w-lg mx-auto font-bold text-4xl md:text-6xl xl:text-6xl text-white mb-4">
+        <span className="important-text text-white">Bienvenid@ a</span>
+        <br />
+        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#2F3E2E] to-[#A9D18E] drop-shadow-[0_0_8px_#A9D18E] tracking-wider scale-105">
+          Geolocalizer
+        </span>
       </h1>
-      <p className="max-w-md mx-auto text-sm sm:text-base md:text-lg font-normal text-slate-300 mb-4 text-balance leading-relaxed">
-        "Conectamos ubicaciones y personas, facilitando la exploración y el
-        acceso a información en tiempo real. Potenciamos la experiencia de
-        navegar con precisión y facilidad."
+      <p className="mt-12 max-w-md mx-auto text-sm md:text-lg font-normal text-slate-300 mb-6">
+        "Conectamos Ubicaciones y Personas, Facilitando la Exploración y el
+        Acceso a Información en Tiempo Real. Potenciamos la Experiencia de
+        Navegar con Precisión y Facilidad."
       </p>
     </div>
   );

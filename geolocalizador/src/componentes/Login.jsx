@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const users = [{ username: "root", password: "root" }];
@@ -6,6 +7,7 @@ const users = [{ username: "root", password: "root" }];
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -19,16 +21,19 @@ function Login() {
       navigate("/");
     } else {
       alert("Username o password incorrectos");
+      setError("Ha salido mal");
       localStorage.clear();
     }
   };
 
   return (
-    <div className="flex items-center justify-center bg-gradient-to-b from-[#2c3e50] to-[#1e3a5f] min-h-screen">
-      <div className="bg-white/10 backdrop-blur-xl rounded-lg shadow-2xl p-8 w-96 text-white animate-fade-in border border-lime-400/30 hover:shadow-lime-400 transition-all duration-700">
-        <h2 className="text-2xl font-bold text-center mb-6 tracking-wider text-lime-300 drop-shadow-glow animate-pulse">
-          INICIAR SESIÓN
-        </h2>
+    <div className="group relative transition-all duration-500">
+      {/* Glow animado alrededor del contenedor al hacer hover */}
+      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 group-hover:blur-md bg-accent-primary transition-all duration-500 animate-glow border border-accent-primary z-0" />
+
+      {/* Contenedor principal */}
+      <div className="relative bg-white/30 backdrop-blur-md rounded-xl p-8 w-96 text-gray-900 border border-white/50 shadow-xl z-10 transition-all duration-500">
+        <h2 className="text-2xl font-semibold text-center mb-4">Login</h2>
 
         <div className="space-y-4">
           <input
@@ -36,39 +41,39 @@ function Login() {
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-4 py-2 bg-white/20 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-lime-400 placeholder-white/80 transition-all duration-300"
+            className="w-full px-4 py-2 bg-white/50 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary placeholder-gray-600"
           />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 bg-white/20 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-lime-400 placeholder-white/80 transition-all duration-300"
+            className="w-full px-4 py-2 bg-white/50 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary placeholder-gray-600"
           />
         </div>
 
         <div className="flex items-center justify-between mt-4">
-          <label className="flex items-center space-x-2 text-sm">
-            <input type="checkbox" className="accent-lime-500" />
-            <span>Remember me</span>
+          <label className="flex items-center space-x-2">
+            <input type="checkbox" className="accent-accent-primary" />
+            <span className="text-sm text-gray-800">Remember me</span>
           </label>
-          <button className="text-sm text-lime-300 hover:underline">
+          <a href="#" className="text-sm text-blue-600 hover:underline">
             Forgot password?
-          </button>
+          </a>
         </div>
 
         <button
           onClick={handleLogin}
-          className="w-full mt-6 py-2 bg-lime-400 hover:bg-lime-500 hover:scale-105 transition-all duration-300 text-gray-900 font-bold rounded-full shadow-md shadow-lime-200"
+          className="w-full mt-4 py-2 bg-accent-primary hover:bg-accent-hover hover:scale-105 transition-all duration-500 text-black font-semibold rounded-md"
         >
           LOGIN
         </button>
 
-        <p className="text-center text-sm mt-6">
+        <p className="text-center text-sm mt-4 text-gray-800">
           New here?{" "}
-          <button className="text-lime-300 hover:underline">
+          <a href="#" className="text-blue-600 hover:underline">
             Sign Up
-          </button>
+          </a>
         </p>
       </div>
     </div>

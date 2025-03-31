@@ -3,17 +3,17 @@ import { XCircle, CheckCircle, AlertTriangle } from "lucide-react";
 
 const Alert = ({ type = "info", message, onClose }) => {
   const alertStyles = {
-    success: "bg-green-100 border-green-400 text-green-800",
-    error: "bg-red-100 border-red-400 text-red-800",
-    warning: "bg-yellow-100 border-yellow-400 text-yellow-800",
-    info: "bg-blue-100 border-blue-400 text-blue-800",
+    success: "bg-alert-success border-borderAlert-success text-textAlert-success",
+    error: "bg-alert-error border-borderAlert-error text-textAlert-error",
+    warning: "bg-alert-warning border-borderAlert-warning text-textAlert-warning",
+    info: "bg-alert-info border-borderAlert-info text-textAlert-info",
   };
 
   const icons = {
-    success: <CheckCircle className="text-green-600" size={20} />,
-    error: <XCircle className="text-red-600" size={20} />,
-    warning: <AlertTriangle className="text-yellow-600" size={20} />,
-    info: <AlertTriangle className="text-blue-600" size={20} />,
+    success: <CheckCircle className="text-textAlert-success" size={20} />,
+    error: <XCircle className="text-textAlert-error" size={20} />,
+    warning: <AlertTriangle className="text-textAlert-warning" size={20} />,
+    info: <AlertTriangle className="text-textAlert-info" size={20} />,
   };
 
   return (
