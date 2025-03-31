@@ -12,6 +12,7 @@ import Conocenos from "./componentes/Conocenos";
 import Catalogo from "./componentes/Catalogo";
 import Layout from "./componentes/Layout";
 import Registro from "./componentes/Registro";
+import Investigacion from "./componentes/Investigacion"; // 🆕 Importación añadida
 
 function PrivateRoute({ children }) {
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -64,6 +65,14 @@ function App() {
           element={
             <Layout>
               <Catalogo />
+            </Layout>
+          }
+        />
+        <Route
+          path="/investigacion"
+          element={
+            <Layout>
+              <Investigacion />
             </Layout>
           }
         />
