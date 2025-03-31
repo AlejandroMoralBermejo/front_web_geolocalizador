@@ -1,8 +1,6 @@
 import "./App.css";
-import Header from "./componentes/Header";
 import Login from "./componentes/Login";
 import "./index.css";
-// import Boton from "./componentes/Boton";
 
 function Inicio_sesion() {
   return (

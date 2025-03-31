@@ -1,7 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate para redirigir
+import { useNavigate } from "react-router-dom";
 
-function Boton({ texto, padding, color, redireccion }) {
+function Boton({ texto, redireccion }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -9,10 +9,13 @@ function Boton({ texto, padding, color, redireccion }) {
   };
 
   return (
-    <div>
+    <div className="relative group">
+      {/* Contorno animado */}
+      <div className="absolute inset-0 rounded-full border-2 border-lime-400 opacity-50 animate-spin-slow group-hover:opacity-100 pointer-events-none"></div>
+
       <button
-        className={`bg-[#e6ff2b] p-${padding} font-bold rounded-full shadow-xs hover:bg-[#a3af4a] hover:scale-105 transition-all duration-500`}
         onClick={handleClick}
+        className="relative z-10 bg-[#e6ff2b] px-5 py-2 font-bold rounded-full shadow-md hover:bg-[#a3af4a] hover:scale-105 hover:shadow-lg transition-all duration-300 animate-fade-in text-black"
       >
         {texto}
       </button>

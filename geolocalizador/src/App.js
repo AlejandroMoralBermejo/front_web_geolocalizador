@@ -5,17 +5,17 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-import Header from "./componentes/Header";
-import { useEffect } from "react";
 import WelcomePage from "./componentes/WelcomePage";
 import Boton from "./componentes/Boton";
 import InicioSesion from "./Inicio_sesion";
+import Conocenos from "./componentes/Conocenos";
+import Catalogo from "./componentes/Catalogo";
+import Layout from "./componentes/Layout";
 
 function PrivateRoute({ children }) {
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
   const location = useLocation();
 
-  // Si el usuario no está autenticado, lo redirige a "/Inicio_sesion"
   if (!isAuthenticated) {
     return <Navigate to="/Inicio_sesion" state={{ from: location }} replace />;
   }
@@ -31,27 +31,41 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <>
-                <Header />
+              <Layout>
                 <WelcomePage />
-                <div className="mt-16 gap-4 mx-auto w-full h-auto flex flex-row justify-center items-center">
-                  <Boton
-                    texto="Iniciar sesión"
-                    padding={4}
-                    redireccion="/Inicio_sesion"
-                  />
-                  <Boton
-                    texto="Registrarse"
-                    padding={4}
-                    redireccion="/Registro"
-                  />
+                <div className="mt-16 gap-4 mx-auto w-full h-auto flex flex-col md:flex-row justify-center items-center px-4">
+                  <Boton texto="Iniciar sesión" redireccion="/Inicio_sesion" />
+                  <Boton texto="Registrarse" redireccion="/Registro" />
                 </div>
-              </>
+              </Layout>
             </PrivateRoute>
           }
         />
         <Route path="/Inicio_sesion" element={<InicioSesion />} />
-        <Route path="/Registro" element={<h1>Registro</h1>} />
+        <Route
+          path="/Registro"
+          element={
+            <Layout>
+              <h1 className="text-white text-center mt-40">Registro</h1>
+            </Layout>
+          }
+        />
+        <Route
+          path="/conocenos"
+          element={
+            <Layout>
+              <Conocenos />
+            </Layout>
+          }
+        />
+        <Route
+          path="/catalogo"
+          element={
+            <Layout>
+              <Catalogo />
+            </Layout>
+          }
+        />
       </Routes>
     </Router>
   );

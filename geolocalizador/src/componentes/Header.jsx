@@ -1,14 +1,40 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (ruta) => {
+    if (location.pathname !== ruta) {
+      navigate(ruta);
+    } else if (ruta !== "/") {
+      navigate("/");
+    }
+  };
+
+  const botones = [
+    { text: "Inicio", path: "/" },
+    { text: "Conócenos", path: "/conocenos" },
+    { text: "Catálogo", path: "/catalogo" },
+  ];
+
   return (
-    <div
-      className="mt-6 flex p-4 gap-4 shadow-lg text-white flex-row mx-auto justify-center items-center border border-2 rounded-full w-64 fixed top-2 left-0 right-0 bg-transparent bg-opacity-70 z-10
-        hover:bg-gradient-to-r hover:from-[#2C3E50] hover:to-[#1E3A5F] hover:text-white transition-all duration-300 hover:scale-110"
-    >
-      <h1>hola</h1>
-      <h1>hola</h1>
-      <h1>hola</h1>
+    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="flex gap-6 px-8 py-3 bg-gradient-to-r from-[#2C3E50] to-[#1E3A5F] text-white rounded-full shadow-xl backdrop-blur-md bg-opacity-70 border border-[#6EE7B7] transition-all duration-300">
+        {botones.map(({ text, path }, idx) => (
+          <button
+            key={idx}
+            onClick={() => handleNavigation(path)}
+            className="relative px-4 py-1 font-semibold tracking-wide rounded-full overflow-hidden group"
+          >
+            <span className="absolute inset-0 w-full h-full transition-all duration-300 transform scale-0 bg-lime-400 group-hover:scale-100 group-hover:blur-sm opacity-30 rounded-full"></span>
+            <span className="relative z-10 group-hover:text-lime-300 transition-all duration-300">
+              {text}
+            </span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

@@ -7,3 +7,6 @@ body {
   background: linear-gradient(to bottom, #2c3e50, #1e3a5f);
   min-height: 100vh;
 }
+* {
+  transition: all 0.3s ease-in-out;
+}
