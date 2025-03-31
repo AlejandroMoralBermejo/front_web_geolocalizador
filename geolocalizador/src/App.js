@@ -11,6 +11,7 @@ import InicioSesion from "./Inicio_sesion";
 import Conocenos from "./componentes/Conocenos";
 import Catalogo from "./componentes/Catalogo";
 import Layout from "./componentes/Layout";
+import Registro from "./componentes/Registro";
 
 function PrivateRoute({ children }) {
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -46,7 +47,7 @@ function App() {
           path="/Registro"
           element={
             <Layout>
-              <h1 className="text-white text-center mt-40">Registro</h1>
+              <Registro />
             </Layout>
           }
         />
