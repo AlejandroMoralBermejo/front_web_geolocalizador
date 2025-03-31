@@ -37,3 +37,20 @@ body {
 .animate-spin-slow {
   animation: spin-slow 6s linear infinite;
 }
+
+@keyframes pulse-sonar {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+    border-color: rgba(99, 125, 87, 1);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    border-color: rgb(59, 78, 50);
+  }
+}
+
+.animate-pulse-sonar {
+  animation: pulse-sonar 2s infinite ease-out;
+}

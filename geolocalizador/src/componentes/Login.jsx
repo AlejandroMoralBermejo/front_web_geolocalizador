@@ -31,6 +31,18 @@ function Login() {
       {/* Glow animado alrededor del contenedor al hacer hover */}
       <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 group-hover:blur-md bg-accent-primary transition-all duration-500 animate-glow border border-accent-primary z-0" />
 
+      {/* Ondas de pulso simulando sonar */}
+      <div className="absolute inset-0 rounded-xl border-2 border-accent-primary opacity-50 animate-pulse-sonar z-0" />
+
+      {/* Título Geolocalizer */}
+      <div className="relative z-10">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-accent-primary drop-shadow-lg">
+          <span className="block text-transparent bg-gradient-to-r from-[#2F3E2E] to-[#A9D18E] bg-clip-text">
+            Geolocalizer
+          </span>
+        </h1>
+      </div>
+
       {/* Contenedor principal */}
       <div className="relative bg-white/30 backdrop-blur-md rounded-xl p-8 w-96 text-gray-900 border border-white/50 shadow-xl z-10 transition-all duration-500">
         <h2 className="text-2xl font-semibold text-center mb-4">Login</h2>
