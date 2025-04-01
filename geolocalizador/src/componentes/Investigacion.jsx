@@ -49,8 +49,8 @@ const secciones = [
 
 const Investigacion = () => {
   return (
-    <div className="min-h-screen px-6 py-16 bg-gradient-to-b from-[#C9D6BD] to-[#597D60] text-white animate-fade-in-up">
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-accent-primary drop-shadow-lg">
+    <div className="min-h-screen mt-32 px-6 py-16 bg-gradient-to-b from-[#C9D6BD] to-[#597D60] text-white animate-fade-in-up">
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-[#3b4f3b] to-[#7d996d] text-transparent bg-clip-text drop-shadow-lg">
         Investigación y Desarrollo
       </h1>
 

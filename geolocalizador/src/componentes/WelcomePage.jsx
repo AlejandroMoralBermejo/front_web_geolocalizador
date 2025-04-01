@@ -6,7 +6,7 @@ const WelcomePage = () => {
       <h1 className="max-w-lg mx-auto font-bold text-4xl md:text-6xl xl:text-6xl text-white mb-4">
         <span className="important-text text-white">Bienvenid@ a</span>
         <br />
-        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#2F3E2E] to-[#A9D18E] drop-shadow-[0_0_8px_#A9D18E] tracking-wider scale-105">
+        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#3b4f3b] to-[#7d996d] drop-shadow-[0_0_8px_#A9D18E] tracking-wider scale-105">
           Geolocalizer
         </span>
       </h1>
