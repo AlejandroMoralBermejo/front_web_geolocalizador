@@ -36,7 +36,7 @@ function App() {
                 <WelcomePage />
                 <div className="mt-16 gap-4 mx-auto w-full h-auto flex flex-row justify-center items-center">
                   <Boton
-                    texto="Iniciar sesión"
+                    texto="frfrerdededededeedededed"
                     padding={4}
                     redireccion="/Inicio_sesion"
                   />
